@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.pipeworx-io/finra",
   "title": "Finra",
-  "description": "FINRA Reg SHO daily short-sale volume.",
-  "version": "0.1.0",
+  "description": "FINRA short-sale data — Reg SHO daily short-sale VOLUME plus consolidated",
+  "version": "0.1.1",
   "websiteUrl": "https://pipeworx.io/packs/finra",
   "repository": {
     "url": "https://github.com/pipeworx-io/mcp-finra",

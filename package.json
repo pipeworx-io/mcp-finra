@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-finra",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "FINRA short-sale data — Reg SHO daily short-sale VOLUME plus consolidated",
   "type": "module",
   "main": "src/index.ts",
@@ -26,7 +26,7 @@
     "@cloudflare/workers-types": "^4.20260405.1"
   },
   "pipeworx": {
-    "sourceHash": "v1-6bdf6d5b7fa90cf1e03e9d69a4d1c6443d1d078f95d46a5b9b3ee712a479db8f",
-    "sourceCommit": "76aa8f5d9b5dc2f665563030647c68e661478864"
+    "sourceHash": "v1-6c36424ecea192fa71dfe6989440c93bb01c2f1ca9cc61d3f74d79c0e8c5469f",
+    "sourceCommit": "91681e9a4a137fa0051d58e32f38c64b6334af5c"
   }
 }

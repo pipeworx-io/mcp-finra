@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-finra",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "FINRA short-sale data — Reg SHO daily short-sale VOLUME plus consolidated bi-monthly SHORT INTEREST.",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-finra": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "finra"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-finra.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/finra",
   "pipeworx": {
-    "sourceHash": "v1-f44989196d66d2c6eca83a28655db9a7d73260555592d1c7bb5bdfe55c31951a",
-    "sourceCommit": "722087a9bda73f85942e8f6bbfd598544cb0d490"
+    "mode": "gateway",
+    "slug": "finra",
+    "gatewaySlug": "finra",
+    "sourceHash": "v1-7e9d02a78a9edcc0adea35c4c2e49184878b01648d6c4bfda8012e049b99f47a",
+    "sourceCommit": "bb047243cf27f32453103de186b8e6a8b6a1ce79"
   }
 }

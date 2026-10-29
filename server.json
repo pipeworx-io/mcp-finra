@@ -3,7 +3,7 @@
   "name": "io.github.pipeworx-io/finra",
   "title": "Finra",
   "description": "FINRA short-sale data — Reg SHO daily short-sale VOLUME plus consolidated bi-monthly SHORT INTEREST.",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "websiteUrl": "https://pipeworx.io/packs/finra",
   "repository": {
     "url": "https://github.com/pipeworx-io/mcp-finra",

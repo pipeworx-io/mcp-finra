@@ -1,0 +1,88 @@
+[
+  {
+    "name": "short_volume_daily",
+    "description": "FINRA Reg SHO daily short-sale volume for one symbol on one trading day, summed across every consolidated-NMS reporting facility (Nasdaq TRF Carteret, NYSE TRF, Nasdaq TRF Chicago) so the total matches FINRA's consolidated CNMS figure. Returns short_volume, short_exempt_volume, total_volume, short_ratio (short / total), and the per-facility breakdown. Publishing lag is T+1 or better; omit `date` for the most recent published day. Zero-rated: FINRA's terms forbid charging for this data, so the call costs 0 credits.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "symbol": {
+          "type": "string",
+          "description": "Ticker (case-insensitive), e.g. \"AAPL\""
+        },
+        "date": {
+          "type": "string",
+          "description": "YYYY-MM-DD or YYYYMMDD. Defaults to the most recent published trading day."
+        }
+      },
+      "required": [
+        "symbol"
+      ]
+    }
+  },
+  {
+    "name": "short_volume_history",
+    "description": "FINRA Reg SHO daily short-sale volume time series for one symbol — up to 30 trading days ending at `end_date` (default: most recent published day). Each day carries short_volume, short_exempt_volume, total_volume and short_ratio summed across every consolidated-NMS reporting facility, so the daily totals match FINRA's consolidated CNMS figures. Use it to see how a symbol's short-sale share of volume moved over recent sessions. Zero-rated: costs 0 credits.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "symbol": {
+          "type": "string",
+          "description": "Ticker (case-insensitive)"
+        },
+        "days": {
+          "type": "number",
+          "description": "1–30 (default 10)"
+        },
+        "end_date": {
+          "type": "string",
+          "description": "YYYY-MM-DD or YYYYMMDD; defaults to most recent published day"
+        }
+      },
+      "required": [
+        "symbol"
+      ]
+    }
+  },
+  {
+    "name": "short_volume_top",
+    "description": "Ranks symbols on a given trading day by short_ratio (short_volume / total_volume) using FINRA Reg SHO daily data summed across every consolidated-NMS reporting facility. Scans the whole published day (~12,000 symbols) and returns the highest-ratio names. Useful for spotting heavily-shorted names; raise min_total_volume to exclude thinly-traded micro-caps. Zero-rated: costs 0 credits.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "string",
+          "description": "YYYY-MM-DD or YYYYMMDD; defaults to most recent published day"
+        },
+        "limit": {
+          "type": "number",
+          "description": "1–100 (default 25)"
+        },
+        "min_total_volume": {
+          "type": "number",
+          "description": "Skip symbols below this consolidated total volume (default 100000)"
+        }
+      },
+      "required": []
+    }
+  },
+  {
+    "name": "short_interest",
+    "description": "FINRA consolidated SHORT INTEREST for one symbol — the bi-monthly settlement-date data: total open short position, days-to-cover, average daily volume, and change vs the prior settlement. This is the \"% short / days-to-cover\" metric investors cite — DISTINCT from short_volume_daily (daily short-sale VOLUME). Returns the latest settlement plus recent history, plus the FINRA attribution the data is licensed under. Zero-rated: FINRA's terms forbid charging for it, so this call costs 0 credits.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "symbol": {
+          "type": "string",
+          "description": "Ticker (case-insensitive), e.g. \"TSLA\""
+        },
+        "limit": {
+          "type": "number",
+          "description": "How many recent settlements to return (1–24, default 6)"
+        }
+      },
+      "required": [
+        "symbol"
+      ]
+    }
+  }
+]

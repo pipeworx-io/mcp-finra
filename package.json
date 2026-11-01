@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-finra",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "FINRA short-sale data — Reg SHO daily short-sale VOLUME plus consolidated bi-monthly SHORT INTEREST.",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "finra",
     "gatewaySlug": "finra",
-    "sourceHash": "v1-7e9d02a78a9edcc0adea35c4c2e49184878b01648d6c4bfda8012e049b99f47a",
-    "sourceCommit": "bb047243cf27f32453103de186b8e6a8b6a1ce79"
+    "sourceHash": "v1-a6d59f11b65c29a3036e99902e54f52898b42089eb4e24f71b5d9a4dbdeec2ec",
+    "sourceCommit": "d35e32c1ffe988e24d391dedb35666387fd2b3d6"
   }
 }
